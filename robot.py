@@ -3,7 +3,6 @@ import numpy as np
 class WallE:
     def __init__(self, posicion_inicial=(0, 0), direccion_inicial=(1, 0)):
         """Inicializa la posición y dirección de Wall-E, así como otros parámetros."""
-
         self.posicion = np.array(posicion_inicial, dtype=int)
         self.posicion_anterior = self.posicion.copy()  # Guardar posición inicial
         self.direccion = self.normalize(np.array(direccion_inicial, dtype=float))
@@ -33,7 +32,7 @@ class WallE:
         matriz_rotacion = np.array([
             [np.cos(angulo_rad), -np.sin(angulo_rad)],
             [np.sin(angulo_rad), np.cos(angulo_rad)]
-        ]) #R(THETA)como
+        ]) #R(THETA)
         self.direccion = self.normalize(np.dot(matriz_rotacion, self.direccion))
         self .theta = np.arctan2( self .direccion[ 1 ], self .direccion[ 0 ])
 
